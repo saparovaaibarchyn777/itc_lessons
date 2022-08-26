@@ -221,7 +221,7 @@
 #     'Nicky':'+77 888 998',
 #     'Nicky Wittle':'+77 99 000'}
 # }
-#print(d['name']['Nicky'])
+# print(d['Bob'])
 # for key in d:
 #     for i in key :
 #         print(i)

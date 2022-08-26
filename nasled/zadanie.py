@@ -222,52 +222,65 @@ user_data = [{
   "ip_address": "242.192.49.216"
 }]
 
+class Data(object):
+    def __init__(self, user_data: dict) -> None:
+        self.user_data = user_data
+
+    def get_data(self, data: str) -> tuple:
+        items = []
+        for user in self.user_data:
+            for key, value in user.items():
+                if key == data:
+                    items.append(value)
+        return tuple(items) 
+
+    
+    
 
 
 
 
 
 
-# text = input().split()
-# print(''.join(chr(ord(text[i][j:j+1]) + 7) or ' ' if ord(text[i][j:j+1])+3 <= ord('x')+1 or ord(text[i][j:j+1]) <= ord(' ') else chr(ord(text[i][j:j+1])-23) for i in range(len(text)) for j in range(len(text[i]))))
 
 
 
 # class Sezar:
-#     def cipher(s,n):
-#         if s>26:
-#             s=s%26
+#     def shifr(s,n):
+#         if s > 26:
+#             s = s%26
 #         caesar=''
-#         for i in n:
-#             if ord(i)>=ord('a') and ord(i)<=ord('z'):
+#         for i in n.upper():
+#             if ord(i) >= ord('a') and ord(i) <= ord('z'):
 #                 if ord(i)+s>ord('z'):
-#                     caesar=caesar+chr((ord(i)+s)-26)
+#                     caesar = caesar+chr((ord(i)+s)-26)
 #                 else:
 #                     caesar=caesar+chr(ord(i)+s)
 #             else:
 #                 caesar=caesar+i
 #         return caesar
 
-#     def dec(s,n):
-#         if s>26:
-#             s=s%26
-#         caesar=''
+#     def dishifr(s,n):
+#         if s > 26:
+#             s = s%26
+#         caesar = ''
 #         for i in n:
-#             if ord(i)>=ord('a') and ord(i)<=ord('z'):
+#             if ord(i)>=ord('a') and ord(i) <= ord('z'):
 #                 if ord(i)-s<ord('a'):
-#                     caesar=caesar+chr((ord(i)-s)+26)
+#                     caesar = caesar+chr((ord(i)-s)+26)
 #                 else:
-#                     caesar=caesar+chr(ord(i)-s)
+#                     caesar = caesar+chr(ord(i)-s)
             
 #             else:
-#                 caesar=caesar+i
+#                 caesar = caesar+i
 #         return caesar
+#     s = input("Введите ключ : ")
+#     n = input("Введите текст : ")
 
-#     s=input("Введите ключ : ")
-#     n=input("Введите текст : ")
 
-#     print (cipher(int(s),n))
-#     print (dec(int(s),n))
+#     # print (dishifr(int(s),n))
+#     print (shifr(int(s),n))
+ 
     
     
 
